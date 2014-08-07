@@ -1,16 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Treepie Engineering]]></title>
   <link href="http://treepie.github.io/atom.xml" rel="self"/>
   <link href="http://treepie.github.io/"/>
-  <updated>2014-08-07T14:42:40+05:30</updated>
+  <updated>2014-08-07T21:19:56+05:30</updated>
   <id>http://treepie.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Treepie Technologies Pvt. Ltd.]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Core Technologies Used in Treepie Products]]></title>
+    <link href="http://treepie.github.io/blog/2014/08/07/core-technologies-used-in-treepie-products/"/>
+    <updated>2014-08-07T15:03:15+05:30</updated>
+    <id>http://treepie.github.io/blog/2014/08/07/core-technologies-used-in-treepie-products</id>
+    <content type="html"><![CDATA[<p>At Treepie, we develop products which will be used by millions of people around the world. When millions of people are using it; performance, robustness, efficiency, etc. are not to be taken granted. Choosing the best technologies suitable for our products was an interesting piece but not an exact science.</p>
+
+<p>There&rsquo;s no written page in Wikipedia which says choose this technology especially when it comes to Web Applications. Even if you go to Quora or StackExchange(Stackoverflow), there&rsquo;s always some guy who is ready to kill for Ruby on Rails and some another guy who lives, eats and drinks Java (or java based frameworks like Play).  I personally had more experience in Django which, by the way,  I would love to use. However, it&rsquo;s one of the biggest decisions for a startup and after some research and trials, we came to the final decision of our core technologies. Let&rsquo;s have a look at the technologies used at Treepie as of today, 7th August 2014.</p>
+
+<h2>MEAN - MongoDB, Express, AngularJS &amp; NodeJS</h2>
+
+<p>Yes, we chose MEAN. It stands for MongoDB, ExpressJS, AngularJS &amp; NodeJS. There are two MEAN frameworks - mean.io &amp; meanjs.org. Both are started by the same guy - <a href="https://github.com/amoshaviv">@amoshaviv</a>, see this <a href="http://stackoverflow.com/questions/23199392/difference-between-mean-js-and-mean-io">discussion on stackoverflow</a>. Apparently, there were some conflicts between the members of the original MEAN framework and the original creator <a href="http://blog.meanjs.org/post/76726660228/forking-out-of-an-open-source-conflict">forked out of the conflict</a>. This is not a new thing if you like open source softwares. Now, let&rsquo;s get back to WHY we chose MEAN.</p>
+
+<p>It won&rsquo;t be wrong to say MEAN is just a collective name we give to the individual technologies. The reason why we chose MEAN was majorly driven by the individual technologies. So, let&rsquo;s dive into why we choose these technologies in the first place.</p>
+
+<h3>MongoDB</h3>
+
+<p>MongoDB is new hot chick in town. Today&rsquo;s web and mobile technologies are based on progressive, flexible and rapid release cycles which you can call agile. SQL is not something I prefer these days for it is not flexible enough for agile process. To prevent discussing the SQL vs NoSQL topic here, I&rsquo;ll recommend you to see <a href="https://www.google.co.in/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=sql%20vs%20nosql">this</a>. Now, the question is to choose which NoSQL database. Back in Adobe, out team evaluated these MongoDB, Cassandra, CouchDB &amp; if I&rsquo;m not wrong, HBase. Ultimately, our team chose MongoDB. So, in good faith, I was inclined to use MongoDB. But this <a href="http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis">comparison</a> made more sense. Considering the fact that our database will change all the time, as users sync their contacts, MongoDB is the winner for us.</p>
+
+<blockquote><p><strong>Best Used:</strong> If you need dynamic queries. If you prefer to define indexes, not map/reduce functions. If you need good performance on a big DB. If you wanted CouchDB, but your data changes too much, filling up disks.</p>
+
+<p><strong>For example</strong>: For most things that you would do with MySQL or PostgreSQL, but having predefined columns really holds you back.</p></blockquote>
+
+<h3>Express</h3>
+
+<p>The decision to choose <a href="http://expressjs.com/">Express</a> is primarily because of two reasons - NodeJS &amp; familiarity. The team was familiar with express though not experts. We liked the way it works. Middle-wares make it easy to intercept requests at any level and pre or post process them. Most of the Nodejs modules are based on Express. It&rsquo;s a key component of the MEAN frameworks. In short, it is the most popular web application framework in NodeJS. Although we did bump into <a href="http://mcavage.me/node-restify/">Restify</a>, which seemed like a good fit for REST APIs, we chose Express for the reasons mentioned above.</p>
+
+<h3>NodeJS</h3>
+
+<p>Choosing the Web Application was the toughest decision. Apart from being the core programming language, changing the Backend language is the hardest thing to do if we happen to hate it in the future. Also, the team had experience in varieties of programming languages including Java, Python, PHP, etc.</p>
+
+<p><strong>Ruby on rails</strong> is something we would have wanted to use but we had heard enough people complaining about its performance and yes, we had no first hand experience on it.  <strong>Java</strong> again is awesome but isn&rsquo;t it too much for startups? My Experience with Java is that I write too much code to do something so small that I just feel like it&rsquo;s a waste of time. (No offense to Java lovers. It&rsquo;s just a personal opinion. There are of course so many good things about java.) So, we were down to 2 Programming languages - Python and Javascript (NodeJS). The Duel was a tough match.</p>
+
+<p>Few months before this, i had used NodeJS and I wasn&rsquo;t a big fan of it. As a Django developer, i liked the ability to spin off a new app quite quickly. The app contributions of Django are quite good and I suggested using Django. But we eventually decided to try out both Django and Nodejs. Since Django is more of a framework, we did a little bit of research for a similar thing for Nodejs and MEAN came up. Let&rsquo;s see how the comparison between Django and MeanJS turned out.</p>
+
+<table>
+<thead>
+<tr>
+<th>Django</th>
+<th>MeanJS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Doesn&rsquo;t support MongoDB by default</td>
+<td>MongoDB is the default Database of most Nodejs Frameworks</td>
+</tr>
+<tr>
+<td>Third party modules like <a href="https://github.com/django-nonrel/mongodb-engine">Django-Nonrel</a> &amp; <a href="http://django-mongodb-engine.readthedocs.org/en/latest/">django-mongo-engine</a> were not convincing enough as the Django Developers were still focused on SQL</td>
+<td>MongoDB being a JSON(BSON) based datastore, MeanJS or rather NodeJS works better with MongoDB than no other Datastore</td>
+</tr>
+<tr>
+<td>Django is still a website framework.</td>
+<td>MeanJS is a Web Application Framework</td>
+</tr>
+<tr>
+<td>Although you can have REST APIs, the developers still appear to be focused on websites rather than web applications or SPA</td>
+<td>MeanJS is designed using mostly REST APIs</td>
+</tr>
+<tr>
+<td>Django in fact doesn&rsquo;t play very well in Single Page Applications</td>
+<td>AngularJS comes by default and works perfectly</td>
+</tr>
+<tr>
+<td>Many Django apps work with cookies and are tightly coupled with client side renderer</td>
+<td>The web front-end is so loosely coupled with the backend that we could easily split the client code into a different project </td>
+</tr>
+<tr>
+<td>Python &amp; Javascript Developers needed</td>
+<td>Only Javascript developers needed</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>All in all, we decided to go with NodeJS. And believe me, I&rsquo;m get surprised almost everyday with the cool things that NodeJS can do. I&rsquo;ll write about the cool new things that NodeJS can do in my next post.</p>
+
+<h3>AngularJS</h3>
+]]></content>
+  </entry>
   
 </feed>
